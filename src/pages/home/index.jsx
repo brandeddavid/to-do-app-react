@@ -16,7 +16,7 @@ class Home extends Component {
               <p>Nothing planned for now</p>
             ) : (
               toDos.map(toDo => {
-                return <Display toDo={toDo} />;
+                return <Display toDo={toDo} key={toDo.id}/>;
               })
             )}
           </div>
