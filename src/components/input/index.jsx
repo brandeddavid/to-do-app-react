@@ -15,6 +15,14 @@ class NewToDo extends Component {
       [event.target.name]: event.target.value
     });
   };
+  handleAdd = event => {
+      event.preventDefault()
+      this.props.addToDo(this.state.todo)
+      this.setState(() => ({
+          todo: ''
+      }))
+  }
+
 
   render() {
     return (
@@ -34,7 +42,7 @@ class NewToDo extends Component {
         </div>
         <Button
           color="success"
-          onClick={event => this.props.addToDo(event, this.state.todo)}
+          onClick={event => this.handleAdd(event, this.state.todo)}
         >
           {' '}
           Add{' '}

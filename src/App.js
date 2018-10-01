@@ -6,7 +6,7 @@ class App extends Component {
     toDos: []
   };
 
-  addToDo = (event, toDo) => {
+  addToDo = (toDo) => {
     const newToDo = {
       id: Math.random(),
       title: toDo
