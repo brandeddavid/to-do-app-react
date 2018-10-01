@@ -21,7 +21,7 @@ class Home extends Component {
             )}
           </div>
           <div className="col-md-4">
-            <NewToDo />
+            <NewToDo addToDo={this.props.addToDo} />
           </div>
           <div className="col-md-4">
             <h2>Completed</h2>

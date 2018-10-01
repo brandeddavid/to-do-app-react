@@ -20,7 +20,9 @@ class NewToDo extends Component {
     return (
       <React.Fragment>
         <div className="input-field">
-          <Label for="todo"><h2>Enter To Do</h2></Label>
+          <Label for="todo">
+            <h2>Enter To Do</h2>
+          </Label>
           <Input
             type="text"
             name="todo"
@@ -30,7 +32,13 @@ class NewToDo extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <Button color="success"> Add </Button>
+        <Button
+          color="success"
+          onClick={event => this.props.addToDo(event, this.state.todo)}
+        >
+          {' '}
+          Add{' '}
+        </Button>
       </React.Fragment>
     );
   }
