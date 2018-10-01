@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Display from '../../components/display';
 
 class Home extends Component {
   render() {
@@ -11,7 +12,7 @@ class Home extends Component {
           </div>
         ) : (
           toDos.map(toDo => {
-            return <div key={toDo.id}>{toDo.title}</div>;
+            return <Display toDo={toDo} />;
           })
         )}
       </React.Fragment>
