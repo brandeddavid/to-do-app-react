@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
+// components
 import Display from '../../components/display';
+import NewToDo from '../../components/input';
 
 class Home extends Component {
   render() {
@@ -15,6 +18,7 @@ class Home extends Component {
             return <Display toDo={toDo} />;
           })
         )}
+        <NewToDo />
       </React.Fragment>
     );
   }
