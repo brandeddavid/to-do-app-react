@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Display = ({ toDos }) => {
+const Display = ({ toDos, deleteToDo }) => {
   const toDoList = toDos.length ? (
     toDos.map(toDO => {
       return (
-        <div className="list-group-item" key={toDO.id}>
+        <div onClick={() => deleteToDo(toDO.id)} className="list-group-item" key={toDO.id}>
           {toDO.title}
         </div>
       );

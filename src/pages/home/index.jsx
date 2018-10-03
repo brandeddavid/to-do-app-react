@@ -6,7 +6,7 @@ import NewToDo from '../../components/input';
 
 class Home extends Component {
   render() {
-    const { toDos } = this.props;
+    const { toDos, deleteToDo } = this.props;
     return (
       <React.Fragment>
         <div className="row">
@@ -14,7 +14,7 @@ class Home extends Component {
             <hr />
             <h2 className="text-center">All To Dos</h2>
             <hr />
-            <Display toDos={toDos} />
+            <Display toDos={toDos} deleteToDo={deleteToDo}/>
           </div>
           <div className="col-md-4">
             <hr />

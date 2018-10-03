@@ -10,11 +10,19 @@ class App extends Component {
   addToDo = toDo => {
     const newToDo = {
       id: Math.random(),
-      title: toDo
+      title: toDo,
+      status: 'pending'
     };
     this.setState(() => ({
-      toDos: [...this.state.toDos, newToDo],
+      toDos: [...this.state.toDos, newToDo]
     }));
+  };
+
+  deleteToDo = id => {
+    const toDos = this.state.toDos.filter(toDo => {
+      return toDo.id !== id;
+    });
+    this.setState({ toDos });
   };
 
   toggleShowInputField = event => {
@@ -30,6 +38,7 @@ class App extends Component {
         <Home
           toDos={this.state.toDos}
           addToDo={this.addToDo}
+          deleteToDo={this.deleteToDo}
           showInputField={this.state.showInputField}
           toggleShowInputField={this.toggleShowInputField}
         />
