@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Input } from 'reactstrap';
+import './input.css'
 
 class NewToDo extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class NewToDo extends Component {
           </div>
         )}
         <Button
+          className='add-todo-button'
           color="success"
           onClick={event => this.handleAdd(event, this.state.todo)}
         >
