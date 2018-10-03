@@ -14,7 +14,6 @@ class App extends Component {
     };
     this.setState(() => ({
       toDos: [...this.state.toDos, newToDo],
-      showInputField: false
     }));
   };
 
