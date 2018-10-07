@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Input } from 'reactstrap';
-import './input.css'
+import './input.css';
 
 class NewToDo extends Component {
   constructor(props) {
@@ -32,11 +32,23 @@ class NewToDo extends Component {
     }
   };
 
+  handleOkay = event => {
+    event.preventDefault();
+    this.setState(() => ({
+      error: null
+    }));
+  };
+
   render() {
     return (
       <React.Fragment>
         {this.state.error ? (
-          <div>{this.state.error}</div>
+          <div>
+            {this.state.error}
+            <Button className='okay-button' color="success" onClick={event => this.handleOkay(event)}>
+              Okay
+            </Button>
+          </div>
         ) : (
           <div className="input-field">
             <Input
@@ -47,16 +59,16 @@ class NewToDo extends Component {
               value={this.state.todo}
               onChange={this.handleChange}
             />
+            <Button
+              className="add-todo-button"
+              color="success"
+              onClick={event => this.handleAdd(event, this.state.todo)}
+            >
+              {' '}
+              Add{' '}
+            </Button>
           </div>
         )}
-        <Button
-          className='add-todo-button'
-          color="success"
-          onClick={event => this.handleAdd(event, this.state.todo)}
-        >
-          {' '}
-          Add{' '}
-        </Button>
       </React.Fragment>
     );
   }

@@ -11,7 +11,7 @@ class App extends Component {
     const newToDo = {
       id: Math.random(),
       title: toDo,
-      status: 'pending'
+      complete: false
     };
     this.setState(() => ({
       toDos: [...this.state.toDos, newToDo]
